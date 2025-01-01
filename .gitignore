@@ -10,3 +10,4 @@ g_celldata0.json
 
 *.tlog
 *.log
+*Debug/
