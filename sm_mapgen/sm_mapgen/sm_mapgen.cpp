@@ -1,11 +1,47 @@
 #include <iostream>
+#include <string>
+
 #include <lua.hpp> 
 
-int main() {
+using namespace std;
+
+/* 
+TODO
+- make global classes for lua to utilise
+
+sm.terrainData.load() -- if I can get this i wont actually need to mix it with lua
+
+
+- json dump the g_cellData object 
+- json dump in the format expected by the mapping tool
+
+
+*/
+
+
+void loadSQL(string filepath) {
+    cout << filepath;
+}
+
+
+int main(int argc, char* argv[]) {
+
+    string filepath = "";
+
+    if (argc < 1) {
+        filepath = argv[1];
+    }
+    else {
+        cin >> filepath;
+    }
+
+    loadSQL(filepath);
+
+
     // Initialize the Lua interpreter
     lua_State* L = luaL_newstate();
     if (L == nullptr) {
-        std::cerr << "Failed to create Lua state!" << std::endl;
+        cerr << "Failed to create Lua state!" << endl;
         return -1;
     }
 
