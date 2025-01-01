@@ -4,3 +4,9 @@ scale.txt
 testmakemap.ahk
 g_celldata.json
 g_celldata0.json
+
+.vscode
+.vs
+
+*.tlog
+*.log
