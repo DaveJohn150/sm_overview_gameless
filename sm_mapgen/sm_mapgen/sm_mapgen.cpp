@@ -83,8 +83,9 @@ int main(int argc, char* argv[]) {
     // Call Lua function (example: call a function from the script)
     lua_getglobal(L, "luaFunction");  // Assuming your Lua script defines a function called "luaFunction"
     if (lua_isfunction(L, -1)) {
+        lua_pushnumber(L, seed); // add seed to stack
         // Call the Lua function
-        if (lua_pcall(L, 0, 0, 0) != LUA_OK) {
+        if (lua_pcall(L, 1, 0, 0) != LUA_OK) {
             cerr << "Error calling Lua function: " << lua_tostring(L, -1) << endl;
         }
     }
